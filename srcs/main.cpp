@@ -34,7 +34,7 @@ int main(int ac, char** av) {
   int state = rand() % table.size(); 
 
   for (int i = 0; i < 100; i++) {
-    std::cout << table.babble(state) << " ";
+    std::cout << table.babble(state);
   }
 
   return (0);

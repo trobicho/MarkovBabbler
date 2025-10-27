@@ -68,17 +68,19 @@ class TokenTable {
 
     std::string babble(int& state) {
       auto& token = m_table[state];
-      double dice = (rand() % token.count) + 1;
+      double dice = (rand() % token.count);
 
       int total = 0;
       int i;
+      int last = 0;
       for (i = 0; i < token.probabilities.size(); i++) {
         total += token.probabilities[i];
-        if (total >= dice)
+        if (token.probabilities[i] > 0)
+          last = i;
+        if (total > dice)
           break;
       }
-      if (i < token.probabilities.size())
-        state = i;
+      state = last;
       return (m_table[state].word);
     }
 

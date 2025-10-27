@@ -18,7 +18,8 @@ class Lex {
           else
             break;
         }
-        if (m_buffer[m_cur] == ' ' && word != "") {
+        if ((m_buffer[m_cur] == ' '  || m_buffer[m_cur] == '\n') && word != "") {
+          word += m_buffer[m_cur];
           m_cur++;
           break;
         }
