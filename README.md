@@ -2,4 +2,5 @@ Little Markov Babbler takes a file and generate randoms token (100 by default mo
 
 Usage:
    ./compile
+   
    ./babbler filename
